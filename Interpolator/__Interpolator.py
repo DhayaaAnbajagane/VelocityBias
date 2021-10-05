@@ -247,14 +247,15 @@ def velocity_bias(M200c, Mstarsat_Th, z, sims):
     numpy array:
 
         Array of dimension (M200c.size,) and contains the
-        mean bias at requested values of M200c, Mstarsat, and z
-        using all requested sims.
+        mean bias (linear, not log quantity) at requested
+        values of M200c, Mstarsat, and z using all requested sims.
 
     numpy array:
 
         Array of dimension (M200c.size,) and contains the
-        1\sigma uncertainty on the bias at requested values of
-        M200c, Mstarsat, and z using all requested sims.
+        1\sigma absolute (not fractional) uncertainty on
+        the bias at requested values of M200c, Mstarsat, and z 
+        using all requested sims.
 
     '''
     Store_bv, Store_dbv, Store_xline = {}, {}, {}
