@@ -35,7 +35,7 @@ bv = Interpolator.velocity_bias(M200c, Mstarsat_Th=1e10, z=0.2, sims = ['BM', 'T
 ### Caveats
 
 1. MultiDark Planck-2 estimates are only available for sigmaSat and not for sigmaDM or b_v.
-2. The slope and scatter output from the sigmaSat function are point estimates rather than mass-dependent ones.
-3. For the velocity bias, only the mean relation is available. The slope can be estimated from this (the code does not do this). The scatter is unavailable.
+2. The slope and scatter output from the sigmaSat function are point estimates rather than mass-dependent ones. So the same number will be output regardless of input mass.
+3. For the velocity bias, only the mean relation is available. While the slope can be estimated from the mean relation, the code does not compute it. The scatter is unavailable.
 
 If you find any errors/bugs in the code, please reach out to dhayaa@uchicago.edu
