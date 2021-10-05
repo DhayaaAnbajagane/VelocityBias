@@ -10,7 +10,6 @@ parameter_to_index = {'mean': 2, 'slope': 9, 'scatter': 16}
 
 cwd_path = os.path.dirname(__file__)
 
-
 Om = {'TNG' : 0.3089, 'MGTM' : 0.2726, 'BM' : 0.3175, 'The300' : 0.307}
 h  = {'TNG' : 0.6774, 'MGTM' : 0.7040, 'BM' : 0.6711, 'The300' : 0.678}
 
@@ -93,9 +92,6 @@ def sigmaDM(M200c, z, parameter, sim):
 
         interp       = interpolate.LinearNDInterpolator(data[:, [0, 1]], data_modified)
         output[:, i] = interp(input)
-
-    if parameter == 'mean':
-        output = 10**output
 
     return output
 
@@ -216,6 +212,10 @@ def velocity_bias(M200c, Mstarsat_Th, z, sims):
     The interpolation is done linearly over log(M200c), log(Mstarsat), and log(a), where
     a = 1/(1 + z) is the scale factor.
 
+    When more than one sim is provided in <sims>, the output is a theoretical prior
+    estimated using the ensemble of simulations. The prior is represented as a gaussian
+    with a mean and \sigma.
+
 
     ---------
     Params
@@ -253,7 +253,7 @@ def velocity_bias(M200c, Mstarsat_Th, z, sims):
     numpy array:
 
         Array of dimension (M200c.size,) and contains the
-        uncertainty on the bias at requested values of
+        1\sigma uncertainty on the bias at requested values of
         M200c, Mstarsat, and z using all requested sims.
 
     '''
