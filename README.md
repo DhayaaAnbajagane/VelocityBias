@@ -1,6 +1,6 @@
 # Velocity Dispersion/Bias Scaling Relations from Cosmological Simulations
 
-This repository hosts both the data and corresponding interpolation scripts for the galaxy/DM velocity dispersion and galaxy velocity bias scaling relation parameters of halos in IllustrisTNG, Magneticum Pathfinder, Bahamas + Macsis, The Three Hundred, and MultiDark Planck-2 from redshifts 0 < z < 1. The properties and their corresponding scaling parameters are computed as described in [Anbajagane et. al 2021](INSERT LINK). **Citation to this publication is requested if these scaling parameters are used.**
+This repository hosts both the data and corresponding interpolation scripts for the galaxy/DM velocity dispersion and galaxy velocity bias scaling relation parameters of halos in IllustrisTNG, Magneticum Pathfinder, Bahamas + Macsis, The Three Hundred, and MultiDark Planck-2 from redshifts 0 < z < 1. The properties and their corresponding scaling parameters are computed as described in [Anbajagane et. al 2021](https://arxiv.org/abs/2110.01683). **Citation to this publication is requested if these scaling parameters are used.**
 
 The following properties are available:
 
