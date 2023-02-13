@@ -17,6 +17,10 @@ def _Hofz(sim, z):
 
     return h[sim]*100*np.sqrt(Om[sim]*(1 + z)**3 + (1 - Om[sim]))
 
+def _hofz(sim, z):
+
+    return h[sim]*np.sqrt(Om[sim]*(1 + z)**3 + (1 - Om[sim]))
+
 def sigmaDM(M200c, z, parameter, sim):
 
     '''
@@ -196,7 +200,7 @@ def sigmaSat(M200c, Mstarsat_Th, z, parameter, sim):
         norm  = norm_mean  + (norm_upp  - norm_low)/2  * np.random.randn(N, 1)
         slope = slope_mean + (slope_upp - slope_low)/2 * np.random.randn(N, 1)
 
-        mean  = norm + slope*(np.log10(M200c).flatten() - 14 + np.log10(_Hofz(sim, z)).flatten())
+        mean  = norm + slope*(np.log10(M200c).flatten() - 14 + np.log10(_hofz(sim, z)).flatten())
 
         output = np.quantile(mean, [0.5, 0.84, 0.16, 0.975, 0.025, 0.9985, 0.0015], axis = 0).T
 
@@ -254,7 +258,7 @@ def velocity_bias(M200c, Mstarsat_Th, z, sims):
 
         Array of dimension (M200c.size,) and contains the
         1\sigma absolute (not fractional) uncertainty on
-        the bias at requested values of M200c, Mstarsat, and z 
+        the bias at requested values of M200c, Mstarsat, and z
         using all requested sims.
 
     '''
