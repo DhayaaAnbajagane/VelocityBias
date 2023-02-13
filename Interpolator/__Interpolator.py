@@ -262,6 +262,10 @@ def velocity_bias(M200c, Mstarsat_Th, z, sims):
         using all requested sims.
 
     '''
+
+    if not isinstance(sims, list):
+        raise ValueError("sims needs to be a list of sim names even if you want only 1 sim. eg. s = ['TNG']")
+
     Store_bv, Store_dbv, Store_xline = {}, {}, {}
     for sim in sims:
 
